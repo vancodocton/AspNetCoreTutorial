@@ -1,0 +1,26 @@
+﻿@model ICollection<Book>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Book Title</th>
+            <th scope="col">Category</th>
+            <th scope="col">Decrisption</th>
+            <th scope="col">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Id</td>
+                <td>@book.Title</td>
+                <td>@book.Category.Name</td>
+                <td>@book.Description</td>
+                <td>@book.Price</td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+</table>
