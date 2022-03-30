@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
-
-namespace WebApp.Models
+﻿namespace WebApp.Models
 {
     public class Category
     {

@@ -11,6 +11,6 @@ namespace WebApp.Data
         {
         }
 
-        public DbSet<Category> Category { get; set; } = null!;
+        public DbSet<Category> Categories { get; set; } = null!;
     }
 }
