@@ -10,7 +10,5 @@ namespace WebApp.ViewModels
 
         [ValidateNever]
         public SelectList Categories { get; set; } = null!;
-
-        public string Message { get; set; } = "Ditmemay asp.net core";
     }
 }

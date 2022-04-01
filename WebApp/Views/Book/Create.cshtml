@@ -30,6 +30,11 @@
                 <span asp-validation-for="Book.CategoryId" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Book.Price" class="control-label"></label>
+                <input asp-for="Book.Price" class="form-control" />
+                <span asp-validation-for="Book.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
@@ -39,10 +44,6 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-
-<p>
-    @Model.Message
-</p>
 
 @section Scripts {
     @{

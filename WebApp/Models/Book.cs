@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApp.Models
@@ -16,6 +17,7 @@ namespace WebApp.Models
 
         public string Description { get; set; } = null!;
 
+        [Range(0, double.MaxValue, ErrorMessage ="The price must be positive.")]
         public double Price { get; set; }
     }
 }

@@ -25,7 +25,8 @@ namespace WebApp.Controllers
             return View(books);
         }
 
-        public async Task<IActionResult> Create()
+        [HttpGet]
+        public async Task<IActionResult> CreateAsync()
         {
             var model = new CreateBookViewModel();
             var categories = await dbContext.Categories.ToListAsync();
@@ -36,7 +37,8 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(CreateBookViewModel model)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateAsync(CreateBookViewModel model)
         {
             // check model is valid
             if (ModelState.IsValid)
