@@ -9,5 +9,7 @@
         public string? Description { get; set; }
 
         public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
+
+        public ICollection<Book> Books { get; set; } = null!;
     }
 }
