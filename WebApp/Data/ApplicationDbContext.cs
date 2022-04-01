@@ -19,6 +19,9 @@ namespace WebApp.Data
 
         public DbSet<OrderDetail> OrderDetails { get; set; } = null!;
 
+        public DbSet<Student> Students { get; set; } = null!;
+
+        public DbSet<Group> Groups { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
