@@ -19,5 +19,7 @@ namespace WebApp.Models
 
         [Range(0, double.MaxValue, ErrorMessage ="The price must be positive.")]
         public double Price { get; set; }
+
+        public ICollection<OrderDetail> OrderDetails { get; set; } = null!;
     }
 }

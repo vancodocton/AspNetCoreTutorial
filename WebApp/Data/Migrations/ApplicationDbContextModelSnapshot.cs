@@ -34,7 +34,7 @@ namespace WebApp.Data.Migrations
 
                     b.HasIndex("StudentsId");
 
-                    b.ToTable("GroupStudent");
+                    b.ToTable("GroupStudent", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -265,7 +265,7 @@ namespace WebApp.Data.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Books");
+                    b.ToTable("Books", (string)null);
                 });
 
             modelBuilder.Entity("WebApp.Models.Category", b =>
@@ -288,7 +288,7 @@ namespace WebApp.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("WebApp.Models.Group", b =>
@@ -305,7 +305,7 @@ namespace WebApp.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Groups");
+                    b.ToTable("Groups", (string)null);
                 });
 
             modelBuilder.Entity("WebApp.Models.Order", b =>
@@ -324,7 +324,7 @@ namespace WebApp.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("WebApp.Models.OrderDetail", b =>
@@ -345,7 +345,7 @@ namespace WebApp.Data.Migrations
 
                     b.HasIndex("BookId");
 
-                    b.ToTable("OrderDetails");
+                    b.ToTable("OrderDetails", (string)null);
                 });
 
             modelBuilder.Entity("WebApp.Models.Student", b =>
@@ -362,7 +362,7 @@ namespace WebApp.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Students");
+                    b.ToTable("Students", (string)null);
                 });
 
             modelBuilder.Entity("GroupStudent", b =>
