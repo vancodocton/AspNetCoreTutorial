@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using WebApp.Models;
 
 namespace WebApp.Data
@@ -8,6 +9,8 @@ namespace WebApp.Data
         public static async Task Initialize(IServiceProvider serviceProvider)
         {
             await SeedCategoryData(serviceProvider.GetRequiredService<ApplicationDbContext>());
+
+            await SeedUserRoles(serviceProvider.GetRequiredService<RoleManager<IdentityRole>>());
         }
 
         private static async Task SeedCategoryData(ApplicationDbContext dbContext)
@@ -32,6 +35,22 @@ namespace WebApp.Data
                 {
                     dbContext.Categories.Add(category);
                     await dbContext.SaveChangesAsync();
+                }
+            }
+        }
+
+        private static async Task SeedUserRoles(RoleManager<IdentityRole> roleManager)
+        {
+            var roles = new List<string>()
+            {
+                "Seller", "Customer" 
+            };
+
+            foreach (var role in roles)
+            {
+                if (await roleManager.RoleExistsAsync(role) == false)
+                {
+                    await roleManager.CreateAsync(new IdentityRole(role));
                 }
             }
         }
