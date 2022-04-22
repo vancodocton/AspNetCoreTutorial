@@ -139,6 +139,11 @@ namespace WebApp.Areas.Identity.Pages.Account
 
                 if (result.Succeeded)
                 {
+                    result = await _userManager.AddToRoleAsync(user, Input.Role);
+
+                    if (!result.Succeeded)
+                        return Page();
+
                     _logger.LogInformation("User created a new account with password.");
 
                     var userId = await _userManager.GetUserIdAsync(user);
